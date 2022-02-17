@@ -1,0 +1,1300 @@
+
+/** * ============================ * 
+1.Sass All FILE 
+* ============================ * **/
+ @import "./base/variable";
+ @import "./base/fonts";
+ @import "./base/prefix";
+ @import "./base/media_query";
+ @import "./base/typography";
+ 
+/* =========================== 
+TABLE INDEX 
+1. Spacing 
+2. Theme Background Colors 
+3. Menu CSS  
+4. Searchbar 
+5. Form & Button  
+6. Zinbox post Style 
+7. Blog details page 
+8. Author page 
+9. footer css 
+10.ScrollUp 
+11.Preloader 
+=========================== */
+
+/* .1 Spacing */
+ .pt-100 {
+     padding-top: $section-100;
+}
+ .pb-170 {
+     padding-bottom: $section-170;
+     @include tablet {
+         padding-bottom: $section-100;
+    }
+}
+ .pb-100 {
+     padding-bottom: $section-100;
+}
+ .pb-90 {
+     padding-bottom: $inner-90;
+}
+ .pt-80 {
+     padding-top: $inner-80;
+}
+ .pb-80 {
+     padding-bottom: $inner-80;
+}
+ .py-60{
+     padding: $inner-60 0;
+}
+ .pt-120{
+     padding-top:$inner-120;
+     @include tablet{
+         padding-top:0;
+    }
+}
+ .pt-70 {
+     padding-top: $inner-70;
+}
+ .pb-70 {
+     padding-bottom: $inner-70;
+}
+ .pb-60 {
+     padding-bottom: $inner-60;
+}
+ .pt-60 {
+     padding-top: $inner-60;
+     @include tablet{
+         padding-top:0px;
+    }
+}
+ .pt-40 {
+     padding-top: $inner-40;
+}
+ .pb-40 {
+     padding-bottom: $inner-40;
+}
+ .pb-30 {
+     padding-bottom: $inner-30;
+}
+ .mt-minus-120{
+     margin-top: -120px;
+     @include tablet{
+         margin-top:0px;
+    }
+}
+ .mt-minus-60{
+     margin-top: -60px;
+     @include tablet{
+         margin-top:0px;
+    }
+}
+ .mb-100 {
+     margin-bottom: $section-100;
+}
+ .mb-90 {
+     margin-bottom: $inner-90;
+     @include tablet {
+         margin-bottom: $inner-60;
+    }
+}
+ .mb-80 {
+     margin-bottom: $inner-80;
+}
+ .mb-70 {
+     margin-bottom: $inner-70;
+}
+ .mb-60 {
+     margin-bottom: $inner-60;
+}
+ .mb-50 {
+     margin-bottom: $inner-50;
+}
+ .mb-40 {
+     margin-bottom: $inner-40;
+}
+ .mb-30 {
+     margin-bottom: $inner-30;
+}
+ .mb-15 {
+     margin-bottom: 15px;
+}
+ .sm-mb-40{
+     @include desktop {
+         margin-bottom: $inner-40;
+    }
+     @include tablet {
+         margin-bottom: $inner-40;
+    }
+}
+ .sm-mb-30 {
+     @include landscape {
+         margin-bottom: $inner-30;
+    }
+     @include desktop {
+         margin-bottom: $inner-30;
+    }
+     @include tablet {
+         margin-bottom: $inner-30;
+    }
+}
+ .section-spacing-1{
+     padding-top:$inner-60;
+     @include tablet{
+         padding-top:$inner-30;
+    }
+}
+/* .2 Theme Background Colors */
+ .bg-color1{
+     background-color:$bg-color1;
+}
+ .bg-color2{
+     background-color:$bg-color2;
+}
+ .bg-color3{
+     background-color:lighten($bg-color1, 3%);
+}
+ .bg-color4{
+     background-color:lighten($bg-color2, 2%);
+}
+ .bg-color5{
+     background-color:$highlight-color;
+}
+
+/* 3. Menu CSS */
+ .Zinbox-page-header-area{
+     @include landscape{
+         padding-top:25px;
+    }
+     @include desktop{
+         padding-top:25px;
+    }
+     @include tablet{
+         padding-top:25px;
+    }
+}
+ .main-content-area{
+     @include desktop{
+         padding-top:25px;
+    }
+     @include tablet{
+         padding-top:25px;
+    }
+}
+ .themeix-header-area{
+     @include tablet{
+         padding-top:25px;
+    }
+}
+ .themeix-logo{
+     position: absolute;
+     top: 0;
+     left: 15px;
+     z-index: 9999999;
+     a{
+         display:block;
+    }
+     img{
+         max-height:60px;
+    }
+}
+ .themeix-menu{
+     padding-top:10px;
+     ul{
+         margin:0 100px 0 0;
+         padding:0;
+         float:right;
+    }
+     .navigation-menu{
+         li{
+             background-color:transparent;
+             border:none;
+             margin-right:30px;
+             display:inline-block;
+             &:last-child{
+                 margin-right:0;
+            }
+        }
+         >li>a{
+             color:$white-color;
+             padding:25px 0px;
+			 font-weight:$font-weight-medium;
+             position:relative;
+             &:after{
+                 position: absolute;
+                 top: 12px;
+                 left: 0;
+                 width: 0;
+                 height: 3px;
+                 content: "";
+                 background: $highlight-color;
+                 border-radius: 10px;
+                 transition:all .3s linear;
+            }
+             &:hover:after{
+                 width:100%;
+            }
+        }
+         li.submenu{
+             position:relative;
+			 margin-right:50px;
+			 transition:all .3s linear;
+             &:after{
+                 content:"\f107 ";
+                 right:-15px;
+                 top:0;
+                 position:absolute;
+                 font-family:FontAwesome;
+            }
+             &:hover ul{
+                 opacity:1;
+				 top:50px;
+				 width:160px;
+				 transition:all .3s linear;
+				 visibility:visible;
+            }
+             ul{
+                 margin:0;
+                 padding:0;
+                 background:lighten($bg-color1, 3%);
+                 opacity:0;
+                 position:absolute;
+                 top:70px;
+                 left:0;
+                 width:0;
+                 z-index:5;
+                 transition:all .3s linear;
+                 -webkit-box-shadow: -1px 6px 19px -5px rgba(0,0,0,0.96);
+                 -moz-box-shadow: -1px 6px 19px -5px rgba(0,0,0,0.96);
+                 box-shadow: -1px 6px 19px -5px rgba(0,0,0,0.96);
+				 visibility:hidden;
+                 li{
+                     display:block;
+                     width:100%;
+                     border-bottom:1px solid lighten(lighten($bg-color1, 3%),45%);
+                     &:hover a{
+                         margin-left:3px;
+                         transition:all .3s linear;
+                         color:$highlight-color;
+                    }
+                     &:last-child{
+                         border-bottom:none;
+                    }
+                     a{
+                         padding:12px 16px;
+                         display:block;
+                         color:$white-color;
+                         transition:all .3s linear;
+                    }
+                }
+            }
+        }
+    }
+}
+ .zinbox-menu .mean-bar{
+     position:absolute;
+     left:0;
+     padding:10px 0;
+     background:$bg-color1;
+}
+ .mean-container .mean-nav{
+     background:none;
+}
+/* 4. Searchbar */
+ *, :before, :after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     font: inherit 
+}
+ .search-box{
+     float: right;
+     margin-top: -40px;
+     margin-right: -103px;
+     @include landscape{
+         display:none;
+    }
+     @include desktop{
+         display:none;
+    }
+     @include tablet{
+         display:none;
+    }
+}
+ [id='search-btn'] {
+     position: absolute;
+     left: -100vw;
+     ~ * {
+         --i: var(--pos, 1);
+         --j: calc(1 - var(--i)) 
+    }
+     &:checked ~ * {
+         --pos: 0 
+    }
+}
+ [for='search-btn'] {
+     width: 3em;
+     height: 3em;
+     transition: 0.65s ease-out;
+     cursor: pointer;
+     position: absolute;
+     right: 15px;
+     top: 13px;
+     background-image: url(../images/search-img.png);
+     background-repeat: no-repeat;
+     z-index:12;
+}
+ [id='search-bar'] {
+     border: none;
+     padding: 0 1em;
+     width: 47em;
+     height: $txt-h;
+     border-radius: $txt-h;
+     transform: translate(var(--pos, .5*$txt-w));
+     background: $highlight-color;
+     --cp: inset(-2em var(--pos, 100%) -2em -2em);
+     -webkit-clip-path: var(--cp);
+     clip-path: var(--cp);
+     color: #fff;
+     font: 1em century gothic, verdana, arial, sans-serif;
+     transition: $t;
+     position:relative;
+     margin-right:100px;
+     &::placeholder {
+         color: inherit;
+         font-size: .875em;
+         letter-spacing: 1px;
+         
+    }
+     &:focus {
+         outline: none;
+         background: $txt-c;
+         color: #000;
+    }
+}
+ .Zinbox-page-header-area{
+     padding-bottom:60px;
+}
+ .Zinbox-header-text{
+     color:$white-color;
+     border-bottom:1px solid #3e4392;
+     .zinbox-post-title{
+         padding-bottom:15px;
+    }
+     p{
+         font-style:italic;
+    }
+}
+
+ .zinbox-post-title p{
+     font-style:italic;
+}
+/* 5. Button & Form */
+ .btn-style1{
+     display: inline-block;
+     background: #ffffff;
+     padding: 5px 10px;
+     font-size: 14px;
+     margin-bottom: 25px;
+     color:darken($default-color,65%);
+     width:106px;
+     i{
+         padding-left:10px;
+         color:$highlight-color;
+    }
+     &:hover a {
+         color:$hover-color1;
+    }
+}
+ .btn-style2 {
+     color: $white-color;
+     padding: 10px 30px;
+     border: 1px solid $white-color;
+     transition: .2s linear;
+     color: $white-color;
+     &:hover {
+         background: $highlight-color;
+         color: $white-color;
+         border: 1px solid $highlight-color;
+         transition: .2s linear;
+    }
+}
+ .btn-more{
+     border:1px solid $white-color;
+     color:$white-color;
+     padding:4px 10px;
+     @include transition(all .2s linear);
+     &:hover{
+         border:1px solid $highlight-color;
+         @include transition(all .2s linear);
+		 background:$highlight-color;
+		 color:$heading-color;
+    }
+}
+ button {
+     border: none;
+     cursor: pointer;
+}
+ form, fieldset {
+     padding: 0;
+     margin: 0;
+}
+ .form-control:focus {
+     outline: 0 !important;
+}
+ textarea:focus, input:focus {
+     outline: none;
+}
+ .comment-form input[type=text], .Zinbox-form input[type=text] {
+     padding: 8px 15px;
+     border: none;
+     background: transparent;
+     width: 100%;
+     border: 1px solid lighten($bg-color1, 35%);
+	  color:$white-color;
+     @include tablet {
+         width: 100%;
+         margin-bottom: 15px;
+    }
+     &::placeholder{
+         color:$white-color;
+    }
+}
+ .comment-form button, .Zinbox-form button{
+     background:$highlight-color;
+     color:$white-color;
+     border:1px solid $highlight-color;
+     &:hover{
+         background:transparent;
+         border:1px solid $white-color;
+    }
+}
+ .Zinbox-form .form-row>.col, .form-row>[class*=col-] {
+     padding: 0;
+}
+ textarea {
+     width: 100%;
+     border: none;
+     margin-top: 15px;
+     height: 170px;
+     padding: 15px;
+     background: transparent;
+     border: 1px solid lighten($bg-color1, 35%);
+	  color:$white-color;
+     @include tablet {
+         margin-top: 0;
+    }
+     &::placeholder{
+         color:$white-color;
+    }
+}
+ textarea, input[type=text], button {
+     &:focus {
+         outline: 0;
+    }
+}
+ iframe {
+     border: none;
+}
+/* .6 Zinbox post Style */
+ .post-style-one {
+     transition:all .3s linear;
+     padding:0 30px 0 0;
+     height:100%;
+     display:flex;
+     flex-direction:column;
+     @include tablet{
+         padding:0 0 30px 0;
+    }
+     @include desktop{
+         padding:0 0 30px 0;
+    }
+     .post-thumb{
+         a{
+             display:block;
+        }
+         img{
+             width:100%;
+        }
+    }
+}
+ .post-thumb{
+     a{
+         display:block;
+         position:relative;
+         &:before{
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             content: "";
+             background: linear-gradient(to left, $bg-color1 0%, rgba(255, 255, 255, 0) 100%);
+             transition: all .3s linear;
+             opacity: 0.7;
+			 @include desktop{
+             opacity: 0;
+        }
+@include tablet{
+             opacity: 0;
+        }
+        }
+    }
+     img{
+         width:100%;
+    }
+}
+ .post-content{
+     color:$white-color;
+     margin-left: -100px;
+     align-items: flex-start;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     height: 100%;
+     width:100%;
+     @include landscape{
+         margin-left:0;
+    }
+     @include desktop{
+         margin-left:0;
+    }
+     @include tablet{
+         margin-left:0;
+    }
+     .post-meta{
+         margin-bottom:10px;
+    }
+	.zinbox-post-title {
+		h2 {
+			a {
+				color:$heading-color;
+			}
+		}
+	}
+     .post-meta a{
+         color:$white-color;
+         background:$highlight-color;
+         padding:5px 10px;
+    }
+     .post-meta span{
+         background:$bg-color2;
+         margin-left:10px;
+         padding:5px 10px;
+    }
+     p{
+         margin:20px 0 30px 0;
+    }
+}
+ .post-style-2{
+     padding:0 $inner-50;
+     @include tablet{
+         padding:0;
+    }
+     p{
+         margin:$inner-30 0;
+    }
+     .post-meta{
+         margin-bottom:10px;
+    }
+     .post-meta a{
+         color: $white-color;
+         background: $highlight-color;
+         padding: 5px 10px;
+    }
+     span{
+         background: $bg-color2;
+         margin-left: 10px;
+         padding: 0px 8px;
+         display:inline-block;
+    }
+     .btn-more{
+         padding:3px 8px;
+    }
+}
+ .owl-dots{
+     position: absolute;
+     left: 50%;
+     bottom: -20px;
+     transform: translate(-50%);
+}
+ .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+     background: $white-color;
+     color: inherit;
+     font: inherit;
+     height: 5px;
+     width: 20px;
+     margin-right: 10px;
+     border-radius: 6px;
+     &:focus{
+         outline:0;
+    }
+}
+ .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot.active{
+     background:$highlight-color;
+     width:25px;
+}
+ .reverse-loop .row:nth-child(even){
+     flex-direction:row-reverse;
+     .post-content{
+         align-items: flex-end;
+         text-align: right;
+         margin-left: 100px;
+         @include landscape{
+             margin-left:0;
+             align-items: flex-start;
+             text-align: left;
+        }
+         @include desktop{
+             margin-left:0;
+             align-items: flex-start;
+             text-align: left;
+        }
+         @include tablet{
+             margin-left:0;
+             align-items: flex-start;
+             text-align: left;
+        }
+    }
+	.post-thumb {
+		a{
+	&:before {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: linear-gradient(to right,$bg-color1 0,rgba(255,255,255,0) 100%);
+    transition: all .3s linear;
+    opacity: 0.7;
+@include desktop{
+             opacity: 0;
+        }
+@include tablet{
+             opacity: 0;
+        }
+			}
+				
+		}
+	} 
+}
+
+ .author-grid{
+    float: left;
+    width: 370px;
+    padding: 15px;
+	@include landscape{
+	width:310px;
+	padding:0 15px;
+	}
+	@include desktop{
+	width:345px;
+	padding:0 15px;
+	}
+	@include tablet{
+	width:100%;
+	padding:0;
+	margin-bottom:30px;
+	}
+	.author-thumb{
+	position:relative;		 
+		&:hover .author-hover{
+         opacity:1;
+		 @include transition(all .2s);
+	}
+     a{
+         display:block;
+         color:$white-color;
+         font-size:30px;
+         font-weight:$font-weight-bold;
+    }
+     .author-hover{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         position: absolute;
+         align-items:center;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         content: "";
+         background: $highlight-color;
+         @include transition(all .2s);
+         opacity:0;
+    }
+     img{
+         width:100%;
+		 position:relative;
+    }
+		 
+    }
+}
+.author-grid:nth-child(2) {
+  margin-top:$inner-60;
+   @include landscape{
+	margin:0 0 30px 0;
+	}
+  @include desktop{
+	margin:0 0 30px 0;
+	}
+  @include tablet{
+	margin:0 0 30px 0;
+	}
+}
+.author-grid:nth-child(3) {
+  margin-top:120px;
+   @include landscape{
+	margin:0 0 30px 0;
+	}
+   @include desktop{
+	margin:0 0 30px 0;
+	}
+  @include tablet{
+	margin:0 0 30px 0;
+	}
+}
+.author-grid:nth-child(4),.author-grid:nth-child(7) {
+  margin-top:-120px;
+   @include landscape{
+	margin:0 0 30px 0;
+	}
+   @include desktop{
+	margin:0 0 30px 0;
+	}
+  @include tablet{
+	margin:0 0 30px 0;
+	}
+}
+.author-grid:nth-child(5),.author-grid:nth-child(8) {
+  margin-top:-60px;
+  @include landscape{
+	margin:0 0 30px 0;
+	}
+   @include desktop{
+	margin:0 0 30px 0;
+	}
+  @include tablet{
+	margin:0 0 30px 0;
+	}
+}
+.Zinbox-home-v2{
+.author-grid{
+width:306px;
+@include landscape{
+ width:385px;
+}
+@include desktop{
+ width:285px;
+}
+@include tablet{
+ width:100%;
+}
+}
+}
+/* .7 Blog details page */
+ .blog-page .zinbox-post-title{
+     margin:35px 0;
+     h2{
+         font-size:40px;
+         color:$heading-color;
+         font-weight:$font-weight-bold;
+    }
+}
+ .post-image img{
+     width:100%;
+}
+ .entry-content {
+     h2{
+         margin-bottom:20px;
+    }
+     figure img{
+         margin:15px 0 30px 0;
+    }
+     img{
+         width:100%;
+    }
+     h6{
+         margin-bottom:15px;
+    }
+     p{
+         margin-bottom:30px;
+    }
+     ul{
+         margin:30px 0;
+         i{
+             margin-right:10px;
+        }
+    }
+     .blog-fluid-image{
+         background-size: cover;
+         width: 100vw;
+         position: relative;
+         left: 49%;
+         right: 50%;
+         height: 695px;
+         margin-left: -50vw;
+         margin-right: -50vw;
+         background-position: center;
+         margin-top: 50px;
+         margin-bottom:50px;
+    }
+     blockquote {
+         padding: 30px 0 5px 0;
+         font-style:italic;
+         position:relative;
+         border-left: 4px solid $highlight-color;
+         margin:50px 0;
+         &:before {
+             content: url(../images/quote.png);
+             top: 25px;
+             left: 20px;
+             margin-right: 30px;
+             position:absolute;
+        }
+         p{
+             padding-left: 90px;
+        }
+    }
+     .hljs{
+         background:darken($default-color,20%);
+    }
+}
+ .post-tags span, .social-option span {
+     color: $bg-color1;
+     font-weight: $font-weight-bold;
+}
+ .post-tags ul li {
+     border:1px solid lighten($default-color,50%);
+     padding: 5px 15px;
+     margin-right: 3px;
+     a{
+         color:$white-color;
+         @include transition(all .2s linear);
+         &:hover{
+             color:$highlight-color;
+        }
+    }
+}
+ .social-option{
+     margin:$inner-30 0;
+     ul li{
+         @include tablet{
+             margin-bottom:15px;
+        }
+         a{
+             color:$default-color;
+             @include desktop{
+                 margin-right:5px;
+            }
+        }
+         i{
+             width:30px;
+             height:30px;
+             line-height:30px;
+             background:#000;
+             margin-right:5px;
+             color:$white-color;
+             text-align:center;
+        }
+    }
+     .facebook i{
+         background:#375EA9;
+    }
+     .twitter i{
+         background:#1AB2E8 
+    }
+     .instagram i{
+         background:#E2688B;
+    }
+     .linkedin i{
+         background:#0077B5;
+    }
+}
+ .author-details{
+     display:inline-table;
+     width:100%;
+     background:lighten($bg-color1, 3%);
+     padding:40px;
+}
+.author-title {
+a{
+font-size:22px;
+font-style: normal;
+}
+}
+ .author-pic img{
+     width:121px;
+     height:130px;
+     float:left;
+     object-fit:cover;
+     margin-right:20px;
+}
+ .author-info {
+     width:calc(100% - 188px);
+     float:left;
+     span{
+         display:block;
+    }
+     .social-profile ul li a{
+         color:$white-color;
+         &:hover{
+             color:$highlight-color;
+        }
+    }
+}
+.post-pagination ul li a{
+color:$white-color;
+}
+ .comments-details {
+     display: table;
+     width: 100%;
+}
+ .author-image img {
+     width: 60px;
+     height: 60px;
+     object-fit: cover;
+     margin-right: 25px;
+     float: left;
+}
+ .comment-text {
+     float: left;
+     width: calc(100% - 85px);
+}
+ .c-title {
+     display: inline-block;
+     span {
+         font-size: 14px;
+         margin-left: 10px;
+    }
+}
+ .c-title p {
+     display: inline-block;
+     a {
+         font-size: $h4-font-size;
+         font-weight: $font-weight-bold;
+         color:$white-color;
+         &:hover{
+             color:$highlight-color;
+        }
+    }
+}
+ a.reply-btn {
+     font-size: 15px;
+     padding:5px 10px;
+     color:$white-color;
+     &:hover{
+         background:$highlight-color;
+         color:$white-color;
+    }
+}
+ .Zinbox-gallery{
+     overflow:hidden;
+     margin-bottom:$inner-30;
+     .grid-item{
+         float:left;
+         margin:7px;
+    }
+}
+/* .8 Authors & tags page */
+
+ .right-content{
+     margin-left: -140px;
+     padding-top:$inner-60;
+     width:100%;
+     @include landscape{
+         margin-left:0;
+         padding-top:0;
+    }
+     @include desktop{
+         margin-left:0;
+    }
+     @include tablet{
+         margin-left:0;
+    }
+     p{
+         margin:30px 0;
+    }
+     span{
+         background:$highlight-color;
+         padding:3px 8px;
+         margin-bottom:15px;
+         display:inline-block;
+    }
+}
+ .author-box{
+     .authors-image{
+         img{
+             width:100%;
+             position:relative;
+        }
+    }
+     .authors-social{
+         position: absolute;
+         right:0;
+         bottom:0;
+         background:none;
+         padding:0 30px 30px 0;
+         ul{
+             li{
+                 display: inline-block;
+                 margin:0 0 0 10px;
+                 float:left;
+                 a{
+                     color:$white-color;
+                     display:block;
+                     margin:0;
+                     i{
+                         margin-right:10px;
+                         text-align:center;
+                    }
+                }
+            }
+        }
+    }
+}
+ .author-number,.tag-number{
+     bottom: 75px;
+     font-size: 120px;
+     position: absolute;
+     right: 55px;
+     font-weight: $font-weight-bold;
+     color:lighten($default-color,60%);
+     @include tablet{
+         display:none;
+    }
+}
+ .tags-meta,.authors-meta {
+     margin-top: $inner-30;
+     span{
+         margin-bottom:15px;
+         display:block;
+    }
+     .btn-post{
+         background:$default-color;
+         color:$white-color;
+         padding:6px 12px;
+         &:hover{
+             background:$highlight-color;
+        }
+         i{
+             margin-left:5px;
+        }
+    }
+     p{
+         margin:30px 0;
+         max-width:666px;
+    }
+}
+ .tags-image img {
+     width: 100%;
+}
+ .tags-image, .authors-image {
+     transform: scale(1.0);
+     overflow: hidden;
+     transition: all .3s linear;
+     &:hover a {
+         transform: scale(1.1);
+         transition: all .3s linear;
+    }
+     a {
+         display: block;
+         transition: all .3s linear;
+    }
+}
+ .contact-widget{
+     background:lighten($bg-color1, 3%);
+     padding:$inner-40;
+     height:100%;
+     .icon{
+         margin-bottom:15px;
+    }
+     i{
+         color:$highlight-color;
+         font-size:30px;
+         margin-bottom:30px;
+    }
+}
+/* .9 footer css */
+ .footer-area {
+     background:lighten($bg-color1, 3%);
+     .widget-title {
+         margin-bottom: $inner-60;
+         color:$white-color;
+         h4{
+             position:relative;
+             display:block;
+             font-weight:$font-weight-normal;
+             &:before{
+                 position: absolute;
+                 top: 45px;
+                 left: 0;
+                 width: 50px;
+                 height: 2px;
+                 content: "";
+                 background: $highlight-color;
+                 transition: all .3s linear;
+            }
+        }
+    }
+     .footer-tags ul {
+         padding: 0;
+    }
+     .footer-tags ul li {
+         margin-bottom:8px;
+         border:1px solid lighten($bg-color1,10%);
+         padding:5px 15px;
+         margin-right:3px;
+         a {
+             transition:all .2s linear;
+             color:$white-color;
+             &:hover{
+                 color:$highlight-color;
+            }
+        }
+    }
+     .footer-category ul li{
+         margin-bottom:20px;
+         a{
+             color:$white-color;
+             &:hover{
+                 color:$highlight-color;
+            }
+        }
+    }
+     .footer-widget{
+         input {
+             width: 100%;
+             padding: 7px 12px;
+             margin-bottom: 15px;
+             position:relative;
+             background:transparent;
+			   color:$white-color;
+             border:1px solid lighten($bg-color1,15%);
+             &::placeholder{
+                 color:$white-color;
+            }
+        }
+         button{
+             position: absolute;
+             right: 15px;
+             padding: 8px 20px;
+             background:$highlight-color;
+             i{
+                 color:$white-color;
+            }
+        }
+         p{
+             color:$white-color;
+        }
+    }
+}
+ .footer-bottom {
+     padding-top: 60px;
+     @include tablet {
+         padding-top: 20px;
+    }
+     p {
+         margin: 0;
+         color:$white-color;
+    }
+     a {
+         color: $highlight-color;
+    }
+}
+
+/* .10 ScrollUp */
+ #scrollUp {
+     height: 40px;
+     width: 40px;
+     background: $highlight-color;
+     line-height: 40px;
+     border-radius: 50%;
+     bottom: 30px;
+     right: 30px;
+     text-align: center;
+     cursor: pointer;
+     color: $white-color;
+}
+
+/* .11 preloader */
+ .preloader {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #fff;
+     z-index: 9999999;
+     -webkit-transition: all 0.3s ease-in;
+     transition: all 0.3s ease-in;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+}
+ .preloader.hide {
+     opacity: 0;
+     display: none;
+}
+ .lds-ripple {
+     display: inline-block;
+     position: relative;
+     width: 64px;
+     height: 64px;
+}
+ .lds-ripple div {
+     position: absolute;
+     border: 2px solid $highlight-color;
+     opacity: 1;
+     border-radius: 50%;
+     -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+ .lds-ripple div:nth-child(2) {
+     -webkit-animation-delay: -0.5s;
+     animation-delay: -0.5s;
+}
+ @-webkit-keyframes lds-ripple {
+     0% {
+         top: 28px;
+         left: 28px;
+         width: 0;
+         height: 0;
+         opacity: 1;
+    }
+     100% {
+         top: -1px;
+         left: -1px;
+         width: 58px;
+         height: 58px;
+         opacity: 0;
+    }
+}
+ @keyframes lds-ripple {
+     0% {
+         top: 28px;
+         left: 28px;
+         width: 0;
+         height: 0;
+         opacity: 1;
+    }
+     100% {
+         top: -1px;
+         left: -1px;
+         width: 58px;
+         height: 58px;
+    }
+}
+ 

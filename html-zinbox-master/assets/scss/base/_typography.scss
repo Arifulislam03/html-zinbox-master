@@ -1,0 +1,59 @@
+/** * ============================ 
+
+* 5.0 Typography 
+
+* ============================ */
+ 
+ 
+ body{
+     color:$white-color;
+     font-family:$font-family;
+	 line-height:1.9;
+	 overflow-x:hidden;
+
+}
+
+a{
+color:$highlight-color;
+&:hover{
+text-decoration:none;
+color:$highlight-color;
+}
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  font-weight:$font-weight-bold;
+}
+h1 a,h2 a,h3 a, h4 a,h5 a, h6 a{
+  color: $heading-color;
+  @include transition(all .2s ease-out); 
+  &:hover{
+  color: $highlight-color;
+  }
+}
+ .heading-1,.heading-2,
+ .heading-3,.heading-4,
+ .heading-5,.heading-6{
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  font-weight:$font-weight-bold;
+ }
+h1, .heading-1 { @include font-size($h1-font-size); }
+h2, .heading-2 { @include font-size($h2-font-size); }
+h3, .heading-3 { @include font-size($h3-font-size); }
+h4, .heading-4 { @include font-size($h4-font-size); }
+h5, .heading-5 { @include font-size($h5-font-size); }
+h6, .heading-6 { @include font-size($h6-font-size); }
+ 
+.display1-font{
+@include font-size($display1-size);
+}
+.display2-font{
+@include font-size($display2-size);
+}
+.display3-font{
+@include font-size($display3-size);
+}
+ 
